@@ -1,0 +1,53 @@
+﻿using System;
+
+namespace Penguin.Extensions.Exceptions
+{
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+    public static class ExceptionExtensions
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+    {
+        #region Methods
+
+        /// <summary>
+        /// Recurses through the inner exceptions of an exception to concat the message into a single string for logging
+        /// </summary>
+        /// <param name="ex">The message to recurse through</param>
+        /// <returns>A concat of all the inner (and outer) messages</returns>
+        public static string RecursiveMessage(this Exception ex)
+        {
+            string output = string.Empty;
+
+            do
+            {
+                output += ex.Message + "\r\n\r\n";
+
+                ex = ex.InnerException;
+            }
+            while (ex != null);
+
+            return output;
+        }
+
+        /// <summary>
+        /// Recurses through the inner exceptions of an exception to concat the stack trace into a single string for logging
+        /// </summary>
+        /// <param name="ex">The message to recurse through</param>
+        /// <returns>A concat of all the inner (and outer) stack traces</returns>
+        public static string RecursiveStackTrace(this Exception ex)
+        {
+            string output = string.Empty;
+
+            do
+            {
+                output += ex.StackTrace + "\r\n\r\n";
+
+                ex = ex.InnerException;
+            }
+            while (ex != null);
+
+            return output;
+        }
+
+        #endregion Methods
+    }
+}
