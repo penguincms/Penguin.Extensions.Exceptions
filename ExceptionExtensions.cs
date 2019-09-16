@@ -1,13 +1,13 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 
 namespace Penguin.Extensions.Exceptions
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
     public static class ExceptionExtensions
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
-        #region Methods
-
         /// <summary>
         /// Recurses through the inner exceptions of an exception to concat the message into a single string for logging
         /// </summary>
@@ -15,6 +15,7 @@ namespace Penguin.Extensions.Exceptions
         /// <returns>A concat of all the inner (and outer) messages</returns>
         public static string RecursiveMessage(this Exception ex)
         {
+            Contract.Requires(ex != null);
             string output = string.Empty;
 
             do
@@ -35,6 +36,8 @@ namespace Penguin.Extensions.Exceptions
         /// <returns>A concat of all the inner (and outer) stack traces</returns>
         public static string RecursiveStackTrace(this Exception ex)
         {
+            Contract.Requires(ex != null);
+
             string output = string.Empty;
 
             do
@@ -47,7 +50,5 @@ namespace Penguin.Extensions.Exceptions
 
             return output;
         }
-
-        #endregion Methods
     }
 }
