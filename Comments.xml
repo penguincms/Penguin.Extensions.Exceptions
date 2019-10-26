@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Penguin.Extensions.Exceptions.Local</name>
+        <name>Penguin.Extensions.Exceptions</name>
     </assembly>
     <members>
         <member name="M:Penguin.Extensions.Exceptions.ExceptionExtensions.RecursiveMessage(System.Exception)">
