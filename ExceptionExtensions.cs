@@ -29,6 +29,23 @@ namespace Penguin.Extensions.Exceptions
             return output;
         }
 
+        public static bool TryFind<T>(this Exception ex, out T found) where T : Exception
+        {
+            Exception toCheck = ex;
+            while (toCheck != null)
+            {
+                if (toCheck is T me)
+                {
+                    found = me;
+                    return true;
+                }
+
+                toCheck = toCheck.InnerException;
+            }
+            found = null;
+            return false;
+        }
+
         /// <summary>
         /// Recurses through the inner exceptions of an exception to concat the stack trace into a single string for logging
         /// </summary>
