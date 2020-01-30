@@ -6,6 +6,7 @@
     <Description>Exception extension methods. Currently only contains a method for recursively gathering stack/message information for logging purposes.</Description>
     <AssemblyName>Penguin.Extensions.Exceptions</AssemblyName>
     <RootNamespace>Penguin.Extensions.Exceptions</RootNamespace>
+    <DocumentationFile>Penguin.Extensions.Exceptions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
