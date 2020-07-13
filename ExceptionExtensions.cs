@@ -15,7 +15,11 @@ namespace Penguin.Extensions.Exceptions
         /// <returns>A concat of all the inner (and outer) messages</returns>
         public static string RecursiveMessage(this Exception ex)
         {
-            Contract.Requires(ex != null);
+            if (ex is null)
+            {
+                throw new ArgumentNullException(nameof(ex));
+            }
+
             string output = string.Empty;
 
             do
@@ -53,7 +57,10 @@ namespace Penguin.Extensions.Exceptions
         /// <returns>A concat of all the inner (and outer) stack traces</returns>
         public static string RecursiveStackTrace(this Exception ex)
         {
-            Contract.Requires(ex != null);
+            if (ex is null)
+            {
+                throw new ArgumentNullException(nameof(ex));
+            }
 
             string output = string.Empty;
 
