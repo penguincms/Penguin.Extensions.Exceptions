@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/penguincms/Penguin.Extensions.Exceptions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Extensions.Exceptions</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Exception extension methods. Currently only contains a method for recursively gathering stack/message information for logging purposes.</Description>
     <AssemblyName>Penguin.Extensions.Exceptions</AssemblyName>
