@@ -45,6 +45,7 @@ namespace Penguin.Extensions.Exceptions
 
                 toCheck = toCheck.InnerException;
             }
+
             found = null;
             return false;
         }
